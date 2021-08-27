@@ -9,7 +9,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks : [] // id: unique, name, status
+      tasks : [], // id: unique, name, status
+      isDisplayForm: false
     }
   };
 
@@ -22,30 +23,6 @@ class App extends Component {
     }
   }
 
-  onGenerateData = () => {
-    var tasks = [
-      {
-        id: this.generateID(),
-        name: "Hoc lap trinh",
-        status : true
-      },
-      {
-        id: this.generateID(),
-        name: "Ngu",
-        status : false
-      },
-      {
-        id: this.generateID(),
-        name: "Choi",
-        status : true
-      },
-    ];
-    this.setState({
-      tasks : tasks
-    });
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }
-
   s4(){
     return Math.floor((1+Math.random()) * 0x110000).toString(16).substring(1);
   }
@@ -55,27 +32,72 @@ class App extends Component {
     + this.s4() + '-' + this.s4();
   }
 
-  render() {
+  onToggleForm = () => {
+    this.setState({
+      isDisplayForm : !this.state.isDisplayForm
+    })
+  }
+
+  onCloseForm = () => {
+    this.setState({
+      isDisplayForm : false
+    })
+  }
+
+  onSubmit = (data) => {
     var {tasks} = this.state;
+    data.id = this.generateID();
+    tasks.push(data);
+    this.setState({
+      tasks: tasks
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
+  onUpdateStatus = (id) => {
+    var {tasks} = this.state;
+    var index = this.findIndex(id);
+    if(index !== -1){
+      tasks[index].status = !tasks[index].status;
+      this.setState({
+        tasks : tasks 
+      })
+    }
+  }
+
+  findIndex = (id) => {
+    var {tasks} = this.state;
+    var result = -1;
+    tasks.forEach((task, index) => {
+      if(task.id === id){
+        result = index;
+      }
+    });
+    return result;
+    }
+
+  render() {
+    var {tasks, isDisplayForm} = this.state;
+    var elmTaskForm = isDisplayForm 
+                    ? <TaskForm onCloseForm = {this.onCloseForm} onSubmit={this.onSubmit}/> 
+                    : ''
     return(
       <div className="container">
+        
         <div className="text-center">
           <h1>Quản Lý Công Việc</h1>
           <hr />
         </div>
         <div className="row">
           <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <TaskForm />
+            {elmTaskForm}
           </div>
-          <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-            <button type="button" className="btn btn-primary">
+          <div className={isDisplayForm ? "col-xs-8 col-sm-8 col-md-8 col-lg-8" : "col-xs-12 col-sm-12 col-md-12 col-lg-12"}>
+            <button type="button" className="btn btn-primary" onClick={this.onToggleForm}>
               <span className="fas fa-plus text-right"></span>Thêm Công Việc
             </button>
-            <button type="button" className="btn btn-danger" onClick={this.onGenerateData}>
-              <span className="fas fa-plus text-right"></span>Update data
-            </button>
             <Control />
-            <TaskList tasks={tasks}/>
+            <TaskList tasks={tasks} onUpdateStatus={this.onUpdateStatus}/>
           </div>
         </div>
       </div>
