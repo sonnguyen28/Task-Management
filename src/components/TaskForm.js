@@ -5,9 +5,20 @@ class TaskForm extends Component {
   constructor(props) {
       super(props);
       this.state = {
+        id : '',
         name : '',
         status: false,
       }
+  }
+
+  componentWillMount(){
+    if(this.props.task){
+      this.setState({
+        id : this.props.task.id,
+        name : this.props.task.name,
+        status : this.props.task.status,
+      });
+    }
   }
 
   onCloseForm = () => {
@@ -40,12 +51,12 @@ class TaskForm extends Component {
     })
   }
   render() {
+    var {id} = this.state;
     return (
-  
       <div className="card border-warning">
         <div className="card-header bg-warning">
           <h5 className="card-title d-flex justify-content-between">
-            <p>Thêm Công Việc </p>
+            {id !== '' ? <p>Cập Nhập Công Việc</p> : <p>Thêm Công Việc</p>}
             <i className="btn fa fa-times-circle" onClick={this.onCloseForm}></i>
           </h5>
         </div>
