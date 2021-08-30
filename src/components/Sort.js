@@ -11,13 +11,13 @@ class Sort extends Component {
       <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <div className="dropdown">
           <button
-            className="btn btn-primary dropdown-toggle"
+            className="btn btn-primary dropdown-toggle pd-3"
             type="button"
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="true"
           >
-            Sắp Xếp <span className="fa fa-caret-square-o-down ml-3"></span>
+            Sắp Xếp <span className="fa fa-caret-square-o-down"></span>
           </button>
           <div className="dropdown-menu">
             <a

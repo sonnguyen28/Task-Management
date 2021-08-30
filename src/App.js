@@ -225,10 +225,11 @@ class App extends Component {
           >
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-success"
               onClick={this.onToggleForm}
+              style={{borderRadius: "16px"}}
             >
-              <span className="fas fa-plus text-right"></span>Thêm Công Việc
+              <span className="fas fa-plus text-right mr-2"></span>Thêm Công Việc
             </button>
             <Control
               onSearch={this.onSearch}

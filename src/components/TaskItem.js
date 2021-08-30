@@ -15,15 +15,15 @@ class TaskItem extends Component {
     var { task, index } = this.props;
     return (
       <>
-        <tr>
+        <tr className="text-center">
           <td>{index + 1}</td>
           <td>{task.name}</td>
           <td className="text-center">
             <span
               className={
                 task.status === true
-                  ? "badge badge-pill badge-success btn"
-                  : "badge badge-pill badge-danger btn"
+                  ? "badge badge-pill badge-success btn p-2 w-25"
+                  : "badge badge-pill badge-danger btn p-2 w-25"
               }
               onClick={this.onUpdateStatus}
             >
@@ -35,7 +35,7 @@ class TaskItem extends Component {
             className="btn btn-warning"
             onClick={this.onUpdate}
             >
-              <span className="fas fa-pencil-alt mr-3"></span>Sửa
+              <span className="fas fa-pencil-alt mr-2"></span>Sửa
             </button>
             &nbsp;
             <button
@@ -43,7 +43,7 @@ class TaskItem extends Component {
               className="btn btn-danger"
               onClick={this.onDelete}
             >
-              <span className="fa fa-trash mr-3"></span>Xóa
+              <span className="fa fa-trash mr-2"></span>Xóa
             </button>
           </td>
         </tr>

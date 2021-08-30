@@ -32,20 +32,22 @@ class TaskList extends Component {
             />
     })
     return (
-      <div className="row mt-15">
+      <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <table className="table table-bordered table-hover mt-5">
+          <table className="table table-bordered table-hover mt-5"
+          >
             <thead>
               <tr>
                 <th className="text-center">STT</th>
                 <th className="text-center">Tên</th>
-                <th className="text-center">
-                  <div className="d-flex ">
-                    <p>Trạng Thái</p>
+                <th>
+                  <div className="d-flex">
+                    <p className="text-right w-50 mr-3 my-auto">Trạng Thái</p>
                     <select className="form-control"
                             name="filterStatus"
                             value={filterStatus}
                             onChange={this.onChange}
+                            style={{width: "120px"}}
                     >
                       <option value="-1">Tất Cả</option>
                       <option value="0">Ẩn</option>

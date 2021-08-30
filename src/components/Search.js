@@ -34,11 +34,11 @@ class Search extends Component {
                   onChange={this.onChange}
                   />
           <span className="input-group-btn">
-            <button className="btn btn-primary" 
+            <button className="btn btn-info" 
               type="button"
               onClick={this.onSearch}
               >
-              <span className="fas fa-search-plus mr-3"></span>Tìm
+              <span className="fas fa-search-plus mr-2"></span>Tìm
             </button>
           </span>
         </div>
