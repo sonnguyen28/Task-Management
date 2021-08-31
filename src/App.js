@@ -208,8 +208,8 @@ class App extends Component {
     );
     return (
       <div className="container">
-        <div className="text-center">
-          <h1>Quản Lý Công Việc</h1>
+        <div className="bg-info">
+          <h1 className="text-white text-center">Manage <b>Task</b></h1>
           <hr />
         </div>
         <div className="row">
