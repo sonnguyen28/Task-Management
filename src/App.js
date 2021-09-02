@@ -96,7 +96,7 @@ class App extends Component {
     var { tasks } = this.state;
     var index = this.findIndex(id);
     if (index !== -1) {
-      tasks[index].status = !tasks[index].status;
+      tasks[index].status = 2;
       this.setState({
         tasks: tasks,
       });
@@ -175,7 +175,7 @@ class App extends Component {
         if (filter.status === -1) {
           return task;
         } else {
-          return task.status === (filter.status === 1 ? true : false);
+          return task.status === (filter.status == 0 ? 0 : filter.status == 1 ? 1 : 2);
         }
       });
       if (keyword) {
@@ -187,7 +187,7 @@ class App extends Component {
     if(sortBy === 'name'){
       tasks.sort((a, b) => {
         if(a.name > b.name) return sortValue;
-        else if(a.name < b.name) return sortValue;
+        else if(a.name < b.name) return -sortValue;
         else return 0
       })
     }else{

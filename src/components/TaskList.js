@@ -13,6 +13,7 @@ class TaskList extends Component {
     var target = e.target;
     var name = target.name;
     var value = target.value;
+    console.log(value);
     this.props.onFilter(name === 'filterStatus' ? value : this.state.filterStatus)
     this.setState({
       [name] : value,
@@ -38,9 +39,9 @@ class TaskList extends Component {
           >
             <thead>
               <tr>
-                <th className="text-center">STT</th>
-                <th className="text-center">Tên</th>
-                <th>
+                <th className="text-center" style={{width: "10%"}}>STT</th>
+                <th className="text-center" style={{width: "35%"}}>Tên</th>
+                <th style={{width: "30%"}}>
                   <div className="d-flex">
                     <p className="text-right w-50 mr-3 my-auto">Trạng Thái</p>
                     <select className="form-control"
@@ -50,12 +51,13 @@ class TaskList extends Component {
                             style={{width: "120px"}}
                     >
                       <option value="-1">Tất Cả</option>
-                      <option value="0">Ẩn</option>
-                      <option value="1">Kích Hoạt</option>
+                      <option value="0">New</option>
+                      <option value="1">Pending</option>
+                      <option value="2">Done</option>
                     </select>
                   </div>
                 </th>
-                <th className="text-center">Hành Động</th>
+                <th className="text-center" style={{width: "25%"}}>Hành Động</th>
               </tr>
             </thead>
             <tbody>

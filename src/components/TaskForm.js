@@ -6,7 +6,7 @@ class TaskForm extends Component {
     this.state = {
       id: "",
       name: "",
-      status: false,
+      status: 0,
     };
   }
 
@@ -31,7 +31,7 @@ class TaskForm extends Component {
       this.setState({
         id: "",
         name: "",
-        status: false,
+        status: 0,
       });
     }
   }
@@ -45,7 +45,10 @@ class TaskForm extends Component {
     var name = target.name;
     var value = target.value;
     if (name === "status") {
-      value = target.value === "true" ? true : false;
+      if(target.value === "0") value = 0;
+      else if(target.value === "1") value = 1;
+      else value = 2;
+
     }
     this.setState({
       [name]: value,
@@ -62,7 +65,7 @@ class TaskForm extends Component {
   onClear = () => {
     this.setState({
       name: "",
-      status: false,
+      status: 0,
     });
   };
   render() {
@@ -95,8 +98,9 @@ class TaskForm extends Component {
               value={this.state.status}
               onChange={this.onChange}
             >
-              <option value={true}>Kích Hoạt</option>
-              <option value={false}>Ẩn</option>
+              <option value="0">New</option>
+              <option value="1">Penđing</option>
+              <option value="2">Done</option>
             </select>
             <br />
             <div className="text-center">
