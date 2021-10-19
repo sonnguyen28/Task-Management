@@ -75,7 +75,7 @@ class TaskForm extends Component {
         <div className="card-header">
           <h5 className="card-title">
             {id !== "" ? "Cập Nhập Công Việc" : "Thêm Công Việc"}
-            <button type="button" class="close" aria-hidden="true" onClick={this.onCloseForm}>&times;</button>
+            <button type="button" className="close" aria-hidden="true" onClick={this.onCloseForm}>&times;</button>
           </h5>
         </div>
         <div className="card-body">
@@ -105,7 +105,7 @@ class TaskForm extends Component {
             <br />
             <div className="text-center">
               <button type="submit" className="btn btn-warning mr-3 pr-3">
-              <span class="fas fa-save mr-3"></span>Thêm
+              <span className="fas fa-save mr-3"></span>Lưu
               </button>
               &nbsp;
               <button type="submit" className="btn btn-danger pr-3">

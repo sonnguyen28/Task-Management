@@ -175,7 +175,7 @@ class App extends Component {
         if (filter.status === -1) {
           return task;
         } else {
-          return task.status === (filter.status == 0 ? 0 : filter.status == 1 ? 1 : 2);
+          return task.status === (filter.status === 0 ? 0 : filter.status === 1 ? 1 : 2);
         }
       });
       if (keyword) {
@@ -209,7 +209,7 @@ class App extends Component {
     return (
       <div className="container">
         <div className="bg-info">
-          <h1 className="text-white text-center">Manage <b>Task</b></h1>
+          <h1 className="text-white text-center">Manage <b>Tasks</b></h1>
           <hr />
         </div>
         <div className="row">

@@ -45,17 +45,6 @@ class Sort extends Component {
             <div className="dropdown-divider"></div>
             <a
               className={
-                (this.props.sortBy === "status" && this.props.sortValue === 1)
-                  ? "dropdown-item sort-selected"
-                  : "dropdown-item"
-              }
-              href="#/"
-              onClick={() => this.onClick("status", 1)}
-            >
-              Trạng Thái Kích Hoạt
-            </a>
-            <a
-              className={
                 (this.props.sortBy === "status" && this.props.sortValue === -1)
                   ? "dropdown-item sort-selected"
                   : "dropdown-item"
@@ -63,7 +52,18 @@ class Sort extends Component {
               href="#/"
               onClick={() => this.onClick("status", -1)}
             >
-              Trạng Thái Ẩn
+              Trạng Thái New
+            </a>
+            <a
+              className={
+                (this.props.sortBy === "status" && this.props.sortValue === 1)
+                  ? "dropdown-item sort-selected"
+                  : "dropdown-item"
+              }
+              href="#/"
+              onClick={() => this.onClick("status", 1)}
+            >
+              Trạng Thái Done
             </a>
           </div>
         </div>
