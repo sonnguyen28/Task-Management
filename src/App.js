@@ -207,9 +207,9 @@ class App extends Component {
       ""
     );
     return (
-      <div className="container">
+      <div className="container-xl">
         <div className="bg-info">
-          <h1 className="text-white text-center">Manage <b>Tasks</b></h1>
+          <h1 className="text-white text-center"><b>Task Management</b></h1>
           <hr />
         </div>
         <div className="row">
@@ -229,7 +229,7 @@ class App extends Component {
               onClick={this.onToggleForm}
               style={{borderRadius: "16px"}}
             >
-              <span className="fas fa-plus text-right mr-2"></span>Thêm Công Việc
+              <span className="fas fa-plus text-right mr-2"></span>Add task
             </button>
             <Control
               onSearch={this.onSearch}

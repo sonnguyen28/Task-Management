@@ -39,25 +39,25 @@ class TaskList extends Component {
           >
             <thead>
               <tr>
-                <th className="text-center" style={{width: "10%"}}>STT</th>
-                <th className="text-center" style={{width: "35%"}}>Tên</th>
+                <th className="text-center" style={{width: "10%"}}>No.</th>
+                <th className="text-center" style={{width: "35%"}}>Task</th>
                 <th style={{width: "30%"}}>
                   <div className="d-flex">
-                    <p className="text-right w-50 mr-3 my-auto">Trạng Thái</p>
+                    <p className="text-right w-50 mr-3 my-auto">Status</p>
                     <select className="form-control"
                             name="filterStatus"
                             value={filterStatus}
                             onChange={this.onChange}
                             style={{width: "120px"}}
                     >
-                      <option value="-1">Tất Cả</option>
+                      <option value="-1">All</option>
                       <option value="0">New</option>
-                      <option value="1">Pending</option>
+                      <option value="1">In progress</option>
                       <option value="2">Done</option>
                     </select>
                   </div>
                 </th>
-                <th className="text-center" style={{width: "25%"}}>Hành Động</th>
+                <th className="text-center" style={{width: "25%"}}>Action</th>
               </tr>
             </thead>
             <tbody>

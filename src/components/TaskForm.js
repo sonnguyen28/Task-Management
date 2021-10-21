@@ -74,14 +74,14 @@ class TaskForm extends Component {
       <div className="card">
         <div className="card-header">
           <h5 className="card-title">
-            {id !== "" ? "Cập Nhập Công Việc" : "Thêm Công Việc"}
+            {id !== "" ? "Edit task" : "Add task"}
             <button type="button" className="close" aria-hidden="true" onClick={this.onCloseForm}>&times;</button>
           </h5>
         </div>
         <div className="card-body">
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
-              <label className="font-weight-bold">Tên :</label>
+              <label className="font-weight-bold">Name :</label>
               <input
                 type="text"
                 className="form-control"
@@ -90,7 +90,7 @@ class TaskForm extends Component {
                 onChange={this.onChange}
               />
             </div>
-            <label className="font-weight-bold">Trạng Thái :</label>
+            <label className="font-weight-bold">Status :</label>
             <select
               className="form-control"
               required="required"
@@ -99,17 +99,17 @@ class TaskForm extends Component {
               onChange={this.onChange}
             >
               <option value="0">New</option>
-              <option value="1">Penđing</option>
+              <option value="1">In progress</option>
               <option value="2">Done</option>
             </select>
             <br />
             <div className="text-center">
               <button type="submit" className="btn btn-warning mr-3 pr-3">
-              <span className="fas fa-save mr-3"></span>Lưu
+              <span className="fas fa-save mr-3"></span>Save
               </button>
               &nbsp;
               <button type="submit" className="btn btn-danger pr-3">
-                <span className="fas fa-times-circle mr-3"></span>Hủy Bỏ
+                <span className="fas fa-times-circle mr-3"></span>Cancel
               </button>
             </div>
           </form>

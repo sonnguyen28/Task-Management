@@ -23,17 +23,17 @@ class TaskItem extends Component {
             <span
               className={
                 task.status === 0
-                  ? "badge badge-pill badge-info btn p-2 w-25"
+                  ? "badge badge-pill badge-info btn p-2 w-50"
                   : task.status === 1
-                  ? "badge badge-pill badge-warning btn p-2 w-25"
-                  : "badge badge-pill badge-success btn p-2 w-25"
+                  ? "badge badge-pill badge-warning btn p-2 w-50"
+                  : "badge badge-pill badge-success btn p-2 w-50"
               }
               onClick={this.onUpdateStatus}
             >
               {task.status === 0
                 ? "New"
                 : task.status === 1
-                ? "Pending"
+                ? "In progress"
                 : "Done"}
             </span>
           </td>
@@ -43,16 +43,14 @@ class TaskItem extends Component {
               className="btn btn-warning"
               onClick={this.onUpdate}
             >
-              <span className="fas fa-pencil-alt mr-2"></span>Sửa
-            </button>
+              <span className="fas fa-pencil-alt p-1"></span></button>
             &nbsp;
             <button
               type="button"
               className="btn btn-danger"
               onClick={this.onDelete}
             >
-              <span className="fa fa-trash mr-2"></span>Xóa
-            </button>
+              <span className="fa fa-trash p-1"></span></button>
           </td>
         </tr>
       </>

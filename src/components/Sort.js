@@ -17,7 +17,7 @@ class Sort extends Component {
             aria-haspopup="true"
             aria-expanded="true"
           >
-            Sắp Xếp <span className="fa fa-caret-square-o-down"></span>
+            Sort By <span className="fa fa-caret-square-o-down"></span>
           </button>
           <div className="dropdown-menu">
             <a
@@ -29,7 +29,7 @@ class Sort extends Component {
               href="#/"
               onClick={() => this.onClick("name", 1)}
             >
-              <span className="fas fa-sort-alpha-up-alt pr-3"></span>Tên A-Z
+              <span className="fas fa-sort-alpha-up-alt pr-3"></span>Name A-Z
             </a>
             <a
               className={
@@ -40,7 +40,7 @@ class Sort extends Component {
               href="#/"
               onClick={() => this.onClick("name", -1)}
             >
-              <span className="fas fa-sort-alpha-down-alt pr-3"></span>Tên Z-A
+              <span className="fas fa-sort-alpha-down-alt pr-3"></span>Name Z-A
             </a>
             <div className="dropdown-divider"></div>
             <a
@@ -52,7 +52,7 @@ class Sort extends Component {
               href="#/"
               onClick={() => this.onClick("status", -1)}
             >
-              Trạng Thái New
+              Status New
             </a>
             <a
               className={
@@ -63,7 +63,7 @@ class Sort extends Component {
               href="#/"
               onClick={() => this.onClick("status", 1)}
             >
-              Trạng Thái Done
+              Status Done
             </a>
           </div>
         </div>

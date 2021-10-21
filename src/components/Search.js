@@ -29,7 +29,7 @@ class Search extends Component {
           <input  type="text" 
                   name="keyword"
                   className="form-control" 
-                  placeholder="Nhập từ khóa..." 
+                  placeholder="Search..." 
                   value={this.state.keyword}
                   onChange={this.onChange}
                   />
@@ -38,7 +38,7 @@ class Search extends Component {
               type="button"
               onClick={this.onSearch}
               >
-              <span className="fas fa-search-plus mr-2"></span>Tìm
+              <span className="fas fa-search-plus mr-2"></span>Search
             </button>
           </span>
         </div>

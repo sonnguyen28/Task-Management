@@ -48,6 +48,7 @@
 
 .table td, .table th, .table thead th {
   vertical-align: middle;
+  padding: 10px;
 }
 
 h1, h5{
