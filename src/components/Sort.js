@@ -29,7 +29,7 @@ class Sort extends Component {
               href="#/"
               onClick={() => this.onClick("name", 1)}
             >
-              <span className="fas fa-sort-alpha-up-alt pr-3"></span>Name A-Z
+              <span className="fas fa-sort-alpha-down pr-3"></span>Name A-Z
             </a>
             <a
               className={
