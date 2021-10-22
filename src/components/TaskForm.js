@@ -108,7 +108,7 @@ class TaskForm extends Component {
               <span className="fas fa-save mr-3"></span>Save
               </button>
               &nbsp;
-              <button className="btn btn-danger pr-3" onClick={this.onCloseForm}>
+              <button type="button" className="btn btn-danger pr-3" onClick={this.onCloseForm}>
                 <span className="fas fa-times-circle mr-3"></span>Cancel
               </button>
             </div>
